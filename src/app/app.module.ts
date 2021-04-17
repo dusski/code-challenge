@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './components/map/map.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CardListComponent } from './components/card-list/card-list.component';
+import { CardComponent } from './components/card-list/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    HeaderComponent
+    HeaderComponent,
+    CardListComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
