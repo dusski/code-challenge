@@ -25,25 +25,23 @@ export class MapComponent implements OnInit {
   @Input()
   public height: any;
 
-  private platform: any;
-  private map: any;
-  private ui: any;
-  private search: any;
+  private _platform: any;
+  private _map: any;
+  private _ui: any;
+  private _search: any;
 
   public constructor() { }
 
   public ngOnInit() {
-    this.platform = new H.service.Platform({
+    this._platform = new H.service.Platform({
       "app_id": environment.appId,
       "apikey": environment.apiKey
     });
-
-    this.search = new H.places.Search(this.platform.getPlacesService());
   }
 
   public ngAfterViewInit() {
-    let defaultLayers = this.platform.createDefaultLayers();
-    this.map = new H.Map(
+    let defaultLayers = this._platform.createDefaultLayers();
+    this._map = new H.Map(
       this.mapElement.nativeElement,
       defaultLayers.vector.normal.map,
       {
@@ -55,8 +53,10 @@ export class MapComponent implements OnInit {
       }
     );
 
-    let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map));
-    this.ui = H.ui.UI.createDefault(this.map, defaultLayers);
+    let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this._map));
+    this._ui = H.ui.UI.createDefault(this._map, defaultLayers);
+
+    this._search = new H.places.Search(this._platform.getPlacesService());
   }
 
 }
