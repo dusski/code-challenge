@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
+  width: number;
+  height: number;
+
   constructor() { }
 
   ngOnInit(): void {
