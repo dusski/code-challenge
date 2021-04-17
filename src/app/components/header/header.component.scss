@@ -1,0 +1,12 @@
+$headerBackgroundColor: #ebeae6;
+
+.header {
+  position: relative;
+  height: 3.125rem;
+  background-color: $headerBackgroundColor;
+  z-index: 100;
+  padding: 0rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
