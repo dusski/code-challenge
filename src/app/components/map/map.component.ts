@@ -47,7 +47,7 @@ export class MapComponent implements OnInit {
       this.mapElement.nativeElement,
       defaultLayers.vector.normal.map,
       {
-        zoom: 10,
+        zoom: 13,
         center: {
           lat: this.latitude,
           lng: this.longitude
