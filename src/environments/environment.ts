@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  appId: 'Lt2qpJSX7I6TlQpZpBDs',
-  apiKey: '08qNUUuVt09RwawEFA8rAF7SE9B1Y5dCZ-DfZlMFcZk'
+  appId: 'bVt06ID4hVBUZ6cy74uc',
+  apiKey: 'P7c9FV4_Ekye4kcAouWi4ZQHoZ3J-A1bYD3gQJCBvAI'
 };
 
 /*
