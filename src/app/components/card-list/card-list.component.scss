@@ -1,0 +1,35 @@
+$cardBackgroundColor: #ffffff;
+
+:host {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: scroll;
+  z-index: 100;
+}
+
+.card-list {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0px 0px 8px 8px;
+  list-style-type: none;
+  padding: 0px;
+
+  &::after {
+    content: "";
+    flex: 0 0 8px;
+  }
+}
+
+.card {
+  height: 225px;
+  min-width: 280px;
+  background-color: $cardBackgroundColor;
+  margin-right: 8px;
+
+  &:last-of-type {
+    margin-right: 0px;
+  }
+}

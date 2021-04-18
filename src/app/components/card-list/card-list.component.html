@@ -1,1 +1,20 @@
-<p>card-list works!</p>
+<ul
+  class="card-list"
+  *ngIf="items"
+>
+  <li
+    app-card
+    *ngFor="let item of items"
+    [data]="item"
+  >
+  </li>
+</ul>
+
+<ng-template
+  #cardTemplate
+  let-item
+>
+  <div class="card">
+    <span>{{item}}</span>
+  </div>
+</ng-template>
