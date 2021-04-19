@@ -1,6 +1,9 @@
+// core modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
+// routing
 import { AppRoutingModule } from './app-routing.module';
 
 // components
@@ -20,7 +23,8 @@ import { CardComponent } from './components/card-list/card/card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
