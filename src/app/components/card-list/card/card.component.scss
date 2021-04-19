@@ -17,8 +17,12 @@ $bookButtonColor: #f7941d;
   justify-content: space-between;
 }
 
-.info-wrapper {
+.info {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 .book-btn {
