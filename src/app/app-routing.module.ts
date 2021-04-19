@@ -12,7 +12,7 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'book',
+    path: 'book/:place',
     component: BookingPageComponent
   },
 ];
