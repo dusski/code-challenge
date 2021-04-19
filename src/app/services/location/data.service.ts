@@ -1,48 +1,46 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, Subscriber } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, of, Subscriber } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
+  hotels: any[] = [];
   // default location, intersection of equator and prime meridian
-  currentLocation: [number, number] = [0, 0];
+  private _currentLocation: [latitude: number, longitude: number] = [0, 0];
 
-  private _geolocation: Geolocation;
-
-  get position(): Observable<[latitude: number, longitude: number]> {
-    return new Observable<[latitude: number, longitude: number]>(
-      (subscriber: Subscriber<[latitude: number, longitude: number]>) => {
-        window.navigator.geolocation.getCurrentPosition(
-          (position: GeolocationPosition) => {
-            const { latitude, longitude } = position.coords;
-            subscriber.next([latitude, longitude]);
-          }
-        );
-      }
-    );
-
+  get currentLocation(): [latitude: number, longitude: number] {
+    return this._currentLocation;
+  }
+  set currentLocation(position: [latitude: number, longitude: number]) {
+    this._currentLocation = position;
   }
 
   constructor(
     private _httpClient: HttpClient
-  ) {
-    this._geolocation = window.navigator.geolocation;
-
-    // bindCallback
-
-    // this._geolocation.getCurrentPosition(
-    //   (position: GeolocationPosition) => {
-    //     const { latitude, longitude } = position.coords;
-
-    //     this.currentLocation = [latitude, longitude];
-    //   }
-    // );
-  }
+  ) { }
 
   queryLocation(query: string) {
-    // return this._httpClient.get
+    const [latitude, longitude] = this._currentLocation;
+    const queryParam = new HttpParams().append('q', query);
+
+    return this._httpClient.get(`https://discover.search.hereapi.com/v1/discover?at=${latitude},${longitude}&${queryParam.toString()}&apiKey=${environment.apiKey}`)
+      .pipe(
+        tap(
+          (data: any) => {
+            this.hotels = data;
+          }
+        ),
+        catchError(
+          () => {
+            this.hotels = [];
+            return of([]);
+          }
+        )
+      );
   }
 }
