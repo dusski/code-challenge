@@ -31,8 +31,13 @@ export class DataService {
     return this._httpClient.get(`https://discover.search.hereapi.com/v1/discover?at=${latitude},${longitude}&${queryParam.toString()}&apiKey=${environment.apiKey}`)
       .pipe(
         tap(
-          ({items}: any) => {
-            this.hotels = items;
+          ({ items }: any) => {
+            this.hotels = items.map(
+              (item: any) => {
+                item.price = Math.round((Math.random() * 100) + 1);
+                return item;
+              }
+            );
           }
         ),
         catchError(
