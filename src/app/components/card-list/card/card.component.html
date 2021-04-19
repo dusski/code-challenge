@@ -1,6 +1,10 @@
 <!-- <span>{{ data | json }}</span> -->
 
-<div class="card-body">
+<div
+  class="card-body"
+  #card
+  [ngClass]="{'selected': selectedCardId === item?.id}"
+>
   <div class="info">
     <div class="place">
       <h4 class="m-0">{{ item?.title }}</h4>
