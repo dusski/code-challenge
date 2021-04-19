@@ -9,6 +9,10 @@ const routes: Routes = [
     path: '',
     component: AppComponent
   },
+  {
+    path: 'book',
+    component: AppComponent
+  },
 ];
 
 @NgModule({
