@@ -36,10 +36,13 @@ export class CardComponent implements OnInit, AfterViewInit {
         (hotelId: string) => {
           const { id } = this.item;
 
-          if (hotelId === id) {
-            this.selectedCardId = id;
-            this.cardRef.nativeElement.scrollIntoView(true);
+          if (hotelId !== id) {
+            this.selectedCardId = '';
+            return;
           }
+
+          this.selectedCardId = id;
+          this.cardRef.nativeElement.scrollIntoView(true);
         }
       );
   }
