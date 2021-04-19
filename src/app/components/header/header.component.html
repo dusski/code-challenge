@@ -35,25 +35,34 @@
 
 
   <!-- hamburger svg -->
-  <svg
-    width="16"
-    height="10"
-    viewBox="0 0 16 10"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M0 9H16"
-      stroke="#222222"
-      stroke-width="1.5"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M0 1H16"
-      stroke="#222222"
-      stroke-width="1.5"
-      stroke-linejoin="round"
-    />
-  </svg>
+  <a (click)="menuActive = !menuActive">
+    <svg
+      width="16"
+      height="10"
+      viewBox="0 0 16 10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 9H16"
+        stroke="#222222"
+        stroke-width="1.5"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M0 1H16"
+        stroke="#222222"
+        stroke-width="1.5"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </a>
 
+</div>
+
+<div
+  class="menu"
+  [class.active]="menuActive"
+>
+  <p>This is not the menu you're looking for.</p>
 </div>

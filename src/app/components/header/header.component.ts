@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  menuActive: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

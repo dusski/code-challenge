@@ -1,12 +1,31 @@
+// 1rem = 16px
 $headerBackgroundColor: #ebeae6;
+$headerHeight: 50px;
 
 .header {
   position: relative;
-  height: 3.125rem;
+  height: $headerHeight;
   background-color: $headerBackgroundColor;
   z-index: 100;
   padding: 0rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.menu {
+  position: absolute;
+  top: $headerHeight;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  max-width: 200px;
+  z-index: 1000;
+  background-color: white;
+  padding: 1rem;
+  transition: ease-in-out 0.3s;
+  transform: translateX(100%);
+
+  &.active {
+    transform: translateX(0%);
+  }
 }
