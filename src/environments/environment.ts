@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   appId: 'bVt06ID4hVBUZ6cy74uc',
-  apiKey: 'P7c9FV4_Ekye4kcAouWi4ZQHoZ3J-A1bYD3gQJCBvAI'
+  apiKey: 'JGUDtwriwkbFxfRNwWSTFaWMgA_2FPYBgymUz-tVjSk'
 };
 
 /*
