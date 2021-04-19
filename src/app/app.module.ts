@@ -12,6 +12,8 @@ import { MapComponent } from './components/map/map.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { CardComponent } from './components/card-list/card/card.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { BookingPageComponent } from './pages/booking-page/booking-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { CardComponent } from './components/card-list/card/card.component';
     HeaderComponent,
     CardListComponent,
     CardComponent,
+    HomePageComponent,
+    BookingPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,15 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Components
 import { AppComponent } from './app.component';
+import { BookingPageComponent } from './pages/booking-page/booking-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    component: HomePageComponent
   },
   {
     path: 'book',
-    component: AppComponent
+    component: BookingPageComponent
   },
 ];
 
