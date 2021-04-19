@@ -56,6 +56,11 @@ export class BookingPageComponent implements OnInit {
       );
   }
 
+  ngOnDestroy(): void {
+    this._destruction$.next();
+    this._destruction$.complete();
+  }
+
   onSubmit() {
     console.log(this.bookingForm.value);
     this._router.navigate(['/book-success']);

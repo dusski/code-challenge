@@ -1,7 +1,10 @@
 // 1rem = 16px
+$headerBackgroundColor: #ebeae6;
 
 .form-wrapper {
   padding: 1rem;
+  height: 100%;
+  background-color: $headerBackgroundColor;
 }
 
 .booking-form {
