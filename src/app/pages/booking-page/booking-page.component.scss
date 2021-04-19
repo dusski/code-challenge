@@ -1,0 +1,25 @@
+// 1rem = 16px
+
+.form-wrapper {
+  padding: 1rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-wrap: wrap;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .submit-button {
+    margin-right: 0.5rem;
+  }
+
+  .ng-invalid {
+    border: 1px solid red;
+  }
+}

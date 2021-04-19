@@ -1,1 +1,114 @@
-<p>booking-page works!</p>
+<!-- <p>booking-page works!</p> -->
+<div class="form-wrapper">
+  <h2 class="m-0 mb-1">Booking at "{{ hotel }}"</h2>
+
+  <form
+    class="booking-form"
+    [formGroup]="bookingForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <label>
+      First Name:
+      <input
+        type="text"
+        formControlName="firstName"
+      >
+      <div
+        *ngIf="firstName.invalid"
+        class=""
+      >
+
+        <small
+          *ngIf="firstName?.errors?.required"
+          class="text-red"
+        >
+          This field is required.
+        </small>
+      </div>
+    </label>
+
+    <label>
+      Last Name:
+      <input
+        type="text"
+        formControlName="lastName"
+      >
+
+      <div
+        *ngIf="lastName.invalid"
+        class=""
+      >
+
+        <small
+          *ngIf="lastName?.errors?.required"
+          class="text-red"
+        >
+          This field is required.
+        </small>
+      </div>
+    </label>
+
+    <label>
+      Booking from date:
+      <input
+        type="date"
+        formControlName="dateFrom"
+      >
+
+      <div
+        *ngIf="dateFrom.invalid"
+        class=""
+      >
+
+        <small
+          *ngIf="dateFrom?.errors?.required"
+          class="text-red"
+        >
+          This field is required.
+        </small>
+      </div>
+    </label>
+
+    <label>
+      Booking to date:
+      <input
+        type="date"
+        formControlName="dateTo"
+      >
+
+      <div
+        *ngIf="dateTo.invalid"
+        class=""
+      >
+
+        <small
+          *ngIf="dateTo?.errors?.required"
+          class="text-red"
+        >
+          This field is required.
+        </small>
+      </div>
+    </label>
+
+    <label>
+      Comments/Requests:
+      <textarea
+        formControlName="comments"
+        id="comments"
+        name="comments"
+        rows="4"
+        cols="50"
+      ></textarea>
+    </label>
+
+    <button
+      class="submit-button"
+      type="submit"
+      [disabled]="!bookingForm.valid"
+    >Submit</button>
+    <button
+      type="button"
+      (click)="onCancel()"
+    >Cancel</button>
+  </form>
+</div>
