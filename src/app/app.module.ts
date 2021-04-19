@@ -14,6 +14,8 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { CardComponent } from './components/card-list/card/card.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BookingPageComponent } from './pages/booking-page/booking-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BookSuccessPageComponent } from './pages/book-success-page/book-success-page.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,14 @@ import { BookingPageComponent } from './pages/booking-page/booking-page.componen
     CardComponent,
     HomePageComponent,
     BookingPageComponent,
+    BookSuccessPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
