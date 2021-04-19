@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/location/data.service';
 
 @Component({
   selector: 'app-card-list',
@@ -7,9 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardListComponent implements OnInit {
 
-  @Input() items: any[];
+  get items(): any[] {
+    return this._dataService.hotels;
+  }
 
-  constructor() { }
+  constructor(
+    private _dataService: DataService
+  ) { }
 
   ngOnInit(): void {
   }
