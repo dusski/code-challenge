@@ -1,15 +1,22 @@
 <!-- <span>{{ data | json }}</span> -->
 
 <div class="card-body">
-  <div class="info-wrapper">
-    <img src="" />
-    <div class="info">
-      <h4 class="m-0">Berlin</h4>
-      <h4 class="m-0">Tauentzienstrasse</h4>
-      <p class="m-0">3.4 km from the city center</p>
-      <h4 class="m-0">₤98</h4>
-      <p class="m-0">Designs may vary</p>
+  <div class="info">
+    <div class="place">
+      <h4 class="m-0">{{ item?.title }}</h4>
+      <h4 class="m-0">{{ item?.address?.street }}</h4>
+      <p class="m-0 muted uppercase">{{ item?.distance}} meters away</p>
+    </div>
+    <div
+      class="price"
+      *ngIf="item?.price"
+    >
+      <h4 class="m-0">&euro;{{ item?.price }}</h4>
+      <p class="m-0 muted">Price may vary</p>
     </div>
   </div>
-  <a class="book-btn" [routerLink]="'book'">Book</a>
+  <a
+    class="book-btn"
+    [routerLink]="['/book', item?.title]"
+  >Book</a>
 </div>
