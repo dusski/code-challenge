@@ -1,0 +1,19 @@
+$headerBackgroundColor: #ebeae6;
+
+.success {
+  &-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $headerBackgroundColor;
+    ;
+  }
+
+  &-message {
+    color: green;
+    text-transform: uppercase;
+  }
+}
