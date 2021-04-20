@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { DataService } from 'src/app/services/location/data.service';
+import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
   selector: '[app-card]',

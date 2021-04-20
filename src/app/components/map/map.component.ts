@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
-import { DataService } from 'src/app/services/location/data.service';
+import { DataService } from 'src/app/services/data/data.service';
 import { first } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
@@ -123,7 +123,7 @@ export class MapComponent implements OnInit, OnDestroy {
 
     this.activeMarker.instance.setIcon(new H.map.DomIcon(this.activeMarkerElement));
     this._map.setCenter(position);
-    this._map.setZoom(20);
+    this._map.setZoom(18, true);
     this._dataService.markerSelectedEvent.next(markerId);
   }
 

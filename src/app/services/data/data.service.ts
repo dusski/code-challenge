@@ -27,9 +27,12 @@ export class DataService {
 
   queryLocation(query: string) {
     const [latitude, longitude] = this._currentLocation;
-    const queryParam = new HttpParams().append('q', query);
+    const params = new HttpParams();
+    params.append('at', `${latitude},${longitude}`);
+    params.append('q', query);
+    params.append('apiKey', environment.apiKey);
 
-    return this._httpClient.get(`https://discover.search.hereapi.com/v1/discover?at=${latitude},${longitude}&${queryParam.toString()}&apiKey=${environment.apiKey}`)
+    return this._httpClient.get(`https://discover.search.hereapi.com/v1/discover`, { params })
       .pipe(
         tap(
           ({ items }: any) => {
