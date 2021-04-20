@@ -2,6 +2,18 @@
 
 This project is a solution for ["Limehome Challenge - Software Engineer" test](https://gitlab.com/limehome/interviews/full-stack-challenge).
 
+## Table of contents
+- [Project structure](#project-structure)
+- [Components](#components)
+  * [Card List and Card](#card-list-and-card)
+  * [Header](#header)
+  * [Map](#map)
+- [Pages](#pages)
+  * [Booking Success Page](#booking-success-page)
+  * [Booking Page](#booking-page)
+- [Services](#services)
+  * [Data Service](#data-service)
+
 ## Project structure
 I decided to make a few specialized folders which hold different elements of the application. These are the folders in the app root folder:
 - components
